@@ -1,0 +1,77 @@
+.calendar-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.calendar-controls, .view-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.active {
+    background-color: rgba(25, 118, 210, 0.1);
+}
+
+h2 {
+    margin: 0;
+}
+
+::ng-deep {
+
+    .cal-event-container {
+        background-color: transparent !important;
+    }
+
+    .cal-month-view .cal-cell-top {
+        min-height: 40px;
+    }
+
+    .cal-month-view .cal-day-cell.cal-today {
+        background-color: #e8f5e9;
+    }
+
+    .cal-month-view .cal-event {
+        background-color: #1976d2;
+        border-color: #1565c0;
+        color: white;
+        font-size: 12px;
+        padding: 2px 5px;
+        margin: 2px;
+        border-radius: 3px;
+        max-height: none !important;
+        overflow: hidden;
+        display: block;
+    }
+
+    .cal-week-view .cal-event, .cal-day-view .cal-event {
+        border-radius: 4px;
+        padding: 5px 10px;
+    }
+
+    .cal-month-view .cal-header .cal-cell {
+        font-weight: bold;
+        padding: 10px 0;
+    }
+
+    .cal-month-view .cal-day-badge {
+        background-color: #f44336;
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .calendar-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

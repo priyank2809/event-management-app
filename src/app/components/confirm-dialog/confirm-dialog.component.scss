@@ -1,0 +1,25 @@
+.dialog-container {
+    padding: 16px;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+p {
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+mat-dialog-content {
+    min-width: 300px;
+    padding: 0;
+}
+
+mat-dialog-actions {
+    margin-bottom: 0;
+    padding: 8px 0 0;
+}

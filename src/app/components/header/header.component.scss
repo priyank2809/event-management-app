@@ -1,0 +1,79 @@
+.header {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+}
+
+.app-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-right: 5px;
+    white-space: nowrap;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+// .active {
+//     background-color: rgba(255, 255, 255, 0.2);
+// }
+
+@media (min-width: 375px) and (max-width: 390px) {
+    .header {
+        padding: 0 8px;
+    }
+
+    .app-title {
+        font-size: 1rem;
+        max-width: 140px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .nav-links {
+        gap: 4px;
+    }
+
+    .nav-links a.mat-button,
+    .nav-links a.mat-raised-button {
+        min-width: auto;
+        padding: 0 8px;
+        font-size: 12px;
+        line-height: 28px;
+    }
+}
+
+@media (max-width: 599px) {
+    .header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .app-title {
+        font-size: 1.2rem;
+        margin-right: 8px;
+    }
+
+    .nav-links {
+        gap: 5px;
+    }
+
+    .nav-links a.mat-button {
+        padding: 0 8px;
+        min-width: 64px;
+        font-size: 13px;
+    }
+
+    .nav-links a.mat-raised-button {
+        padding: 0 8px;
+        min-width: 80px;
+        font-size: 13px;
+    }
+}

@@ -1,1 +1,118 @@
-/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import 'node_modules/angular-calendar/css/angular-calendar.css';
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.custom-dialog-container .mat-dialog-container {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.mat-dialog-container {
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.cdk-overlay-dark-backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.cdk-overlay-pane {
+  max-width: 90vw !important;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 599px) {
+  .mat-paginator {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .mat-paginator-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 8px;
+  }
+
+  .mat-paginator-range-label {
+    margin: 0 8px;
+    font-size: 12px;
+  }
+
+  .mat-paginator-page-size {
+    margin-right: 8px;
+  }
+
+  .mat-paginator-navigation-previous,
+  .mat-paginator-navigation-next {
+    min-width: 28px;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+  }
+
+  .mat-select-value {
+    max-width: 40px;
+  }
+}
+
+@media (max-width: 390px) {
+  .mat-paginator-container {
+    justify-content: center !important;
+    padding: 0 4px !important;
+  }
+
+  .mat-paginator-range-label {
+    margin: 0 4px !important;
+    font-size: 11px !important;
+  }
+
+  .mat-paginator-page-size {
+    display: none !important;
+  }
+
+  .mat-paginator-navigation-first,
+  .mat-paginator-navigation-last {
+    display: none !important;
+  }
+
+  .mat-toolbar {
+    padding: 0 8px !important;
+  }
+
+  .mat-button,
+  .mat-raised-button {
+    min-width: auto !important;
+    padding: 0 8px !important;
+  }
+}

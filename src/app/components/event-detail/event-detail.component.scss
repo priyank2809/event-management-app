@@ -1,0 +1,36 @@
+.detail-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.detail-section {
+    margin-bottom: 20px;
+}
+
+.detail-section h3 {
+    display: flex;
+    align-items: center;
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.detail-section mat-icon {
+    margin-right: 8px;
+}
+
+.action-spacer {
+    flex: 1 1 auto;
+}
+
+mat-card-actions {
+    display: flex;
+    padding: 16px;
+}
+
+@media (max-width: 768px) {
+    .detail-container {
+        margin: 20px;
+    }
+}

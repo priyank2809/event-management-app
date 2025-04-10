@@ -1,0 +1,95 @@
+<div class="event-list-container">
+    <div class="search-container">
+        <div class="search-actions">
+            <button mat-raised-button color="primary" routerLink="/add" class="add-btn">
+                <mat-icon>add</mat-icon>
+                <span>Add Event</span>
+            </button>
+            <button mat-button (click)="toggleFilters()" class="filter-btn">
+                <mat-icon>filter_list</mat-icon>
+                <span>Show Filters</span>
+            </button>
+        </div>
+
+        <mat-form-field appearance="outline" class="search-field">
+            <mat-label>Search events</mat-label>
+            <input matInput [(ngModel)]="searchTerm" placeholder="Search by title or location"
+                (keyup.enter)="applyFilter()">
+            <button mat-icon-button matSuffix (click)="applyFilter()">
+                <mat-icon>search</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+
+    <div class="filters-panel" *ngIf="showFilters">
+        <form [formGroup]="filterForm" class="filter-form">
+            <mat-form-field appearance="outline">
+                <mat-label>Start Date</mat-label>
+                <input matInput [matDatepicker]="startPicker" formControlName="startDate">
+                <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+                <mat-datepicker #startPicker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>End Date</mat-label>
+                <input matInput [matDatepicker]="endPicker" formControlName="endDate">
+                <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+                <mat-datepicker #endPicker></mat-datepicker>
+            </mat-form-field>
+
+            <div class="filter-actions">
+                <button mat-button (click)="resetFilters()">Reset</button>
+                <button mat-raised-button color="primary" (click)="applyFilter()">Apply Filters</button>
+            </div>
+        </form>
+    </div>
+
+    <div *ngIf="filteredEvents.length === 0" class="no-events">
+        <mat-icon>event_busy</mat-icon>
+        <p>No events found. Try adjusting your filters or add a new event.</p>
+    </div>
+
+    <div class="events-list" *ngIf="filteredEvents.length > 0">
+        <mat-list>
+            <div *ngFor="let event of paginatedEvents" class="event-list-item">
+                <div class="event-content">
+                    <div class="event-details">
+                        <h3 class="event-title">{{ event.title }}</h3>
+                        <div class="event-metadata">
+                            <div class="event-date">
+                                <mat-icon class="small-icon">event</mat-icon>
+                                <span>{{ event.date | date:'MMM d, yyyy' }}</span>
+                            </div>
+                            <div class="event-location">
+                                <mat-icon class="small-icon">location_on</mat-icon>
+                                <span>{{ event.location }}</span>
+                            </div>
+                        </div>
+                        <p class="event-description">{{ event.description }}</p>
+                    </div>
+                    <div class="event-actions">
+                        <button mat-icon-button color="primary" [routerLink]="['/events', event.id]"
+                            aria-label="View event">
+                            <mat-icon>visibility</mat-icon>
+                        </button>
+                        <button mat-icon-button color="accent" [routerLink]="['/edit', event.id]"
+                            aria-label="Edit event">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-icon-button color="warn" (click)="deleteEvent(event.id)" aria-label="Delete event">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+            </div>
+        </mat-list>
+    </div>
+
+    <div class="paginator-container">
+        <mat-paginator *ngIf="filteredEvents.length > 0" [length]="totalEvents" [pageSize]="pageSize"
+            [pageSizeOptions]="pageSizeOptions" [pageIndex]="currentPage" (page)="onPageChange($event)"
+            aria-label="Select page">
+        </mat-paginator>
+    </div>
+</div>
