@@ -252,26 +252,39 @@
     }
 }
 
-@media (min-width: 375px) and (max-width: 390px) {
+@media (min-width: 375px) and (max-width: 415px) {
+    .event-list-container {
+        padding: 0 10px;
+    }
+    
     .event-content {
-        padding: 8px 4px;
+        padding: 12px 8px;
         position: relative;
         min-height: 80px;
     }
 
     .event-actions {
         position: absolute;
-        right: 4px;
+        right: 8px;
         top: 8px;
         display: flex;
         flex-direction: row;
-        gap: 2px;
+        gap: 0;
+    }
+    
+    .event-actions button {
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+        padding: 0;
+        min-width: 32px;
     }
 
     .event-title {
-        font-size: 14px;
+        font-size: 15px;
         margin-bottom: 25px;
-        padding-right: 90px;
+        padding-right: 100px;
+        line-height: 1.2;
     }
 
     .event-metadata {
@@ -283,6 +296,7 @@
         font-size: 12px;
         -webkit-line-clamp: 2;
         line-clamp: 2;
+        margin-top: 4px;
     }
 
     .search-container {
@@ -293,22 +307,32 @@
         width: 100%;
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: space-between;
         gap: 8px;
-    }
-
-    .add-btn span, .filter-btn span {
-        display: inline-block;
     }
 
     .add-btn, .filter-btn {
         font-size: 12px;
         padding: 0 8px;
+        height: 32px;
+        line-height: 32px;
+    }
+    
+    .add-btn {
+        flex: 1;
+    }
+    
+    .filter-btn {
+        flex: 1;
     }
 
     .add-btn .mat-icon, .filter-btn .mat-icon {
         font-size: 16px;
         margin-right: 4px;
+    }
+
+    .search-field {
+        margin-bottom: 0;
     }
 
     .mat-paginator-container {
@@ -319,13 +343,8 @@
     .mat-paginator-range-label {
         margin: 0 4px !important;
     }
-
-    ::ng-deep .mat-paginator-page-size {
-        display: none !important;
-    }
-
-    ::ng-deep .mat-paginator-navigation-first,
-    ::ng-deep .mat-paginator-navigation-last {
-        display: none !important;
+    
+    .paginator-container {
+        margin-top: 10px;
     }
 }

@@ -1,8 +1,7 @@
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 @import 'node_modules/angular-calendar/css/angular-calendar.css';
 
-html,
-body {
+html, body {
   height: 100%;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -86,7 +85,7 @@ body {
   }
 }
 
-@media (max-width: 390px) {
+@media (min-width: 375px) and (max-width: 415px) {
   .mat-paginator-container {
     justify-content: center !important;
     padding: 0 4px !important;
@@ -108,11 +107,43 @@ body {
 
   .mat-toolbar {
     padding: 0 8px !important;
+    height: 56px !important;
   }
 
   .mat-button,
   .mat-raised-button {
     min-width: auto !important;
     padding: 0 8px !important;
+  }
+
+  .mat-button .mat-icon,
+  .mat-raised-button .mat-icon {
+    margin-right: 4px;
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+  }
+  
+  .mat-icon-button {
+    width: 32px !important;
+    height: 32px !important;
+    line-height: 32px !important;
+  }
+  
+  .mat-icon-button .mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+  }
+
+  .mat-form-field {
+    width: 100%;
+    font-size: 14px;
+  }
+  
+  .mat-form-field-wrapper {
+    padding-bottom: 1em;
   }
 }
